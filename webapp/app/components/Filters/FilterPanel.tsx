@@ -398,8 +398,8 @@ export class FilterPanel extends Component<IFilterPanelProps & FormComponentProp
         {
           queryMode === GlobalControlQueryMode.Manually && (
             <div className={styles.actions}>
-              <Button type="primary" icon="search" onClick={this.search}>查询</Button>
-              <Button icon="reload" onClick={this.reset}>重置</Button>
+              <Button type="primary" icon="search" onClick={this.search}>search</Button>
+              <Button icon="reload" onClick={this.reset}>reset</Button>
             </div>
           )
         }

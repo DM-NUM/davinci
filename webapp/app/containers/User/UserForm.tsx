@@ -50,7 +50,7 @@ interface IUserFormProps {
 export class UserForm extends React.PureComponent<IUserFormProps, {}> {
   private checkPasswordConfirm = (rule, value, callback) => {
     if (value && value !== this.props.form.getFieldValue('password')) {
-      callback('两次输入的密码不一致')
+      callback('Passwords entered twice are inconsistent')
     } else {
       callback()
     }
@@ -113,7 +113,7 @@ export class UserForm extends React.PureComponent<IUserFormProps, {}> {
     const groupTransfer = step
       ? (
         <Transfer
-          titles={['列表', '已选']}
+          titles={['List', 'Selected']}
           listStyle={{width: '220px'}}
           dataSource={groupSource}
           rowKey={this.getTransferRowKey}
@@ -129,9 +129,9 @@ export class UserForm extends React.PureComponent<IUserFormProps, {}> {
         <Row className={utilStyles.formStepArea}>
           <Col span={24}>
             <Steps current={step}>
-              <Step title="基本信息" />
-              <Step title="用户组" />
-              <Step title="完成" />
+              <Step title="Basic information" />
+              <Step title="User group" />
+              <Step title="Done" />
             </Steps>
           </Col>
         </Row>
@@ -148,10 +148,10 @@ export class UserForm extends React.PureComponent<IUserFormProps, {}> {
               {getFieldDecorator('email', {
                 rules: [{
                   required: true,
-                  message: 'Email 不能为空'
+                  message: 'Email can not be empty'
                 }, {
                   type: 'email',
-                  message: '请输入正确的 Email 格式'
+                  message: 'Please enter the correct email format'
                 }, {
                   validator: this.checkNameUnique
                 }]
@@ -161,15 +161,15 @@ export class UserForm extends React.PureComponent<IUserFormProps, {}> {
             </FormItem>
           </Col>
           <Col span={24} className={passwordStyle}>
-            <FormItem label="密码" {...commonFormItemStyle}>
+            <FormItem label="Password" {...commonFormItemStyle}>
               {getFieldDecorator('password', {
                 rules: [{
                   required: true,
-                  message: '密码不能为空'
+                  message: 'Password can not be empty'
                 }, {
                   min: 6,
                   max: 20,
-                  message: '密码长度为6-20位'
+                  message: 'Password length is 6-20'
                 }, {
                   validator: this.forceCheckConfirm
                 }],
@@ -180,11 +180,11 @@ export class UserForm extends React.PureComponent<IUserFormProps, {}> {
             </FormItem>
           </Col>
           <Col span={24} className={passwordStyle}>
-            <FormItem label="确认密码" {...commonFormItemStyle}>
+            <FormItem label="Confirm password" {...commonFormItemStyle}>
               {getFieldDecorator('confirmPassword', {
                 rules: [{
                   required: true,
-                  message: '请确认密码'
+                  message: 'Please enter password'
                 }, {
                   validator: this.checkPasswordConfirm
                 }],
@@ -195,7 +195,7 @@ export class UserForm extends React.PureComponent<IUserFormProps, {}> {
             </FormItem>
           </Col>
           <Col span={24}>
-            <FormItem label="姓名" {...commonFormItemStyle}>
+            <FormItem label="Name" {...commonFormItemStyle}>
               {getFieldDecorator('name', {
                 initialValue: ''
               })(
@@ -204,7 +204,7 @@ export class UserForm extends React.PureComponent<IUserFormProps, {}> {
             </FormItem>
           </Col>
           <Col span={24}>
-            <FormItem label="职位" {...commonFormItemStyle}>
+            <FormItem label="Job" {...commonFormItemStyle}>
               {getFieldDecorator('title', {
                 initialValue: ''
               })(
@@ -213,13 +213,13 @@ export class UserForm extends React.PureComponent<IUserFormProps, {}> {
             </FormItem>
           </Col>
           <Col span={24}>
-            <FormItem label="用户类型" {...commonFormItemStyle}>
+            <FormItem label="User type" {...commonFormItemStyle}>
               {getFieldDecorator('admin', {
                 initialValue: false
               })(
                 <RadioGroup>
-                  <Radio value={false}>普通用户</Radio>
-                  <Radio value>管理员</Radio>
+                  <Radio value={false}>Ordinary user</Radio>
+                  <Radio value>Admin</Radio>
                 </RadioGroup>
               )}
             </FormItem>

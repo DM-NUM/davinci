@@ -119,7 +119,7 @@ export class ProjectsForm extends React.PureComponent<IProjectsFormProps, IProje
         loading={modalLoading}
         disabled={modalLoading}
       >
-        保 存
+        Save
       </Button>
     )]
 
@@ -132,7 +132,7 @@ export class ProjectsForm extends React.PureComponent<IProjectsFormProps, IProje
         loading={modalLoading}
         disabled={modalLoading}
       >
-        移交
+        Transfer
       </Button>
     )]
     const organizationOptions = organizations ? organizations.map((o) => {
@@ -161,11 +161,11 @@ export class ProjectsForm extends React.PureComponent<IProjectsFormProps, IProje
     const isShowDesc = classnames({
       [utilStyles.hide]: this.props.type === 'transfer'
     })
-    let modalTitle = '创建'
+    let modalTitle = 'Create'
     if (type === 'edit') {
-      modalTitle = '修改'
+      modalTitle = 'Modify'
     } else if (type === 'transfer') {
-      modalTitle = '移交'
+      modalTitle = 'Transfer'
     }
     let mode = void 0
     if (this.state.mode === 'role') {
@@ -188,12 +188,12 @@ export class ProjectsForm extends React.PureComponent<IProjectsFormProps, IProje
                         <Input />
                       )}
                     </FormItem>
-                    <FormItem label="名称">
+                    <FormItem label="Name">
                       {getFieldDecorator('name', {
                       //  hidden: this.props.type === 'transfer',
                         rules: [{
                           required: true,
-                          message: 'Name 不能为空'
+                          message: 'Name can not be empty'
                         }, {
                           validator: onCheckUniqueName
                         }]
@@ -203,17 +203,17 @@ export class ProjectsForm extends React.PureComponent<IProjectsFormProps, IProje
                     </FormItem>
                 </Col>
                 <Col span={12}>
-                  <FormItem label="可见">
+                  <FormItem label="Visible">
                     {getFieldDecorator('visibility', {
                       // hidden: this.props.type !== 'edit',
                       initialValue: 'true'
                     })(
                       <Select>
                         <Option key="visibility" value="true">
-                          公开
+                          Public
                         </Option>
                         <Option key="hidden" value="false">
-                          授权
+                          Authorization
                         </Option>
                       </Select>
                     )}
@@ -222,7 +222,7 @@ export class ProjectsForm extends React.PureComponent<IProjectsFormProps, IProje
             </Row>
             <Row gutter={24}>
                 <Col span={24}>
-                  <FormItem label="描述">
+                  <FormItem label="Description">
                     {getFieldDecorator('description', {
                     //  hidden: this.props.type === 'transfer',
                       initialValue: ''
@@ -239,38 +239,38 @@ export class ProjectsForm extends React.PureComponent<IProjectsFormProps, IProje
         <div className={styles.save}>
             <Row>
                 <Col>
-                    <Button disabled={!disabled} onClick={this.props.onModalOk}>保存修改</Button>
+                    <Button disabled={!disabled} onClick={this.props.onModalOk}>Save change</Button>
                 </Col>
             </Row>
         </div>
         <Row className={styles.Zone}>
             <div className={styles.title}>
-              移交项目
+            Transfer project
             </div>
             <div className={styles.titleDesc}>
-              <p className={styles.desc}> <span className={styles.label}>项目名称</span> <b>{name}</b></p>
-              <p className={styles.desc}><span className={styles.label}>创建人</span>  <b>{createBy.username}</b></p>
+              <p className={styles.desc}> <span className={styles.label}>Project Name</span> <b>{name}</b></p>
+              <p className={styles.desc}><span className={styles.label}>Creator</span>  <b>{createBy.username}</b></p>
               <p className={styles.button}>
-                <Tooltip title="移交">
-                  <Button type="default" onClick={this.props.showEditProjectForm}>移交 {name}</Button>
+                <Tooltip title="Transfer">
+                  <Button type="default" onClick={this.props.showEditProjectForm}>Transfer {name}</Button>
                 </Tooltip>
               </p>
             </div>
         </Row>
         <Row className={styles.dangerZone}>
             <div className={styles.title}>
-              删除项目
+              Delete project
             </div>
             <div className={styles.titleDesc}>
-              <p className={styles.desc}>删除后无法恢复，请确定此次操作</p>
+              <p className={styles.desc}>Cannot recover after deletion, please confirm this operation</p>
               <p className={styles.button}>
                 <Popconfirm
-                  title="确定删除？"
+                  title="Sure delete？"
                   placement="bottom"
                   onConfirm={this.deleteProject(id)}
                 >
-                  <Tooltip title="删除">
-                    <Button type="danger"  onClick={this.stopPPG} >删除 {name}</Button>
+                  <Tooltip title="Delete">
+                    <Button type="danger"  onClick={this.stopPPG} >Delete {name}</Button>
                   </Tooltip>
                 </Popconfirm>
               </p>
@@ -289,15 +289,15 @@ export class ProjectsForm extends React.PureComponent<IProjectsFormProps, IProje
           >
             <Menu.Item key="basic">
               <Icon type="setting" />
-              基础设置
+              Basic settings
             </Menu.Item>
             <Menu.Item key="role">
               <Icon type="trademark" />
-              角色管理
+              Role management
             </Menu.Item>
             <Menu.Item key="admin">
               <Icon type="user" />
-              管理员设置
+              Administrator settings
             </Menu.Item>
           </Menu>
           </div>

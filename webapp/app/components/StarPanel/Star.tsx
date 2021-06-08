@@ -73,7 +73,7 @@ export class Star extends React.PureComponent <IStar, IStarState> {
           <div className={styles.formWrapper}>
             <div className={styles.header}>
               <div className={styles.title}>
-                点赞用户
+                Star User
               </div>
             </div>
             <div className={styles.body}>
@@ -100,7 +100,7 @@ export class Star extends React.PureComponent <IStar, IStarState> {
                                 {/*{editHint}*/}
                               </h3>
                               <p className={styles.content}>
-                                点赞时间： {user.starTime}
+                                Star Time： {user.starTime}
                               </p>
                             </header>
                           </div>

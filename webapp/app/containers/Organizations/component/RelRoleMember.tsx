@@ -47,7 +47,7 @@ export class RelRoleMember extends React.PureComponent<IRoleFormProps, {}> {
     (
         <Transfer
           showSearch
-          titles={['列表', '已选']}
+          titles={['List', 'Selected']}
           listStyle={{width: '210px'}}
           dataSource={organizationMembers}
           rowKey={this.getTransferRowKey}

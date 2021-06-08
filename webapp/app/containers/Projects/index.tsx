@@ -434,7 +434,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
                     <Icon type="plus-circle-o" />
                   </div>
                   <div className={styles.createText}>
-                    创建新项目
+                    Create new project
                   </div>
                 </div>
               </div>
@@ -457,7 +457,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
           StarPanel = <Star d={d} starUser={starUserList} unStar={this.starProject} userList={this.getStarProjectUserList}/>
         }
         star = (
-          <Tooltip title="点赞项目">
+          <Tooltip title="Like this project">
             <div className={styles.starWrapperPosition}>
               {StarPanel}
             </div>
@@ -465,22 +465,22 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
         )
 
         transfer = (
-          <Tooltip title="移交项目">
+          <Tooltip title="Handover project">
             <CreateButton className={styles.transfer} type="double-right" onClick={this.showProjectForm('transfer', d)} />
           </Tooltip>
         )
         editButton =  (
-          <Tooltip title="编辑">
+          <Tooltip title="Edit">
             <CreateButton className={styles.edit} type="setting" onClick={this.showProjectForm('edit', d)} />
           </Tooltip>
         )
         deleteButton = (
           <Popconfirm
-            title="确定删除？"
+            title="confirm delete？"
             placement="bottom"
             onConfirm={this.confirmDeleteProject('collect', d.id)}
           >
-            <Tooltip title="删除">
+            <Tooltip title="delete">
               <CreateButton className={styles.delete} type="delete" onClick={this.stopPPG}/>
             </Tooltip>
           </Popconfirm>
@@ -558,7 +558,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
           ProjectName = `${d.name} (${org && org.name ? org.name : ''})`
         }
         star = (
-          <Tooltip title="点赞项目">
+          <Tooltip title="like this project">
             <div className={styles.starWrapperPosition}>
               {StarPanel}
             </div>
@@ -571,7 +571,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
         }
 
         collectButton = (
-          <Tooltip title="收藏">
+          <Tooltip title="Favorite">
             <i
               className={`iconfont icon-heart1 ${styles.collect}`}
               onClick={this.collectProject('collect', d)}
@@ -580,7 +580,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
         )
 
         unCollectButton = (
-          <Tooltip title="取消收藏">
+          <Tooltip title="Delete favorite">
             <i
               className={`iconfont icon-heart ${styles.unCollect}`}
               onClick={this.collectProject('unCollect', d)}
@@ -589,7 +589,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
         )
 
         transfer = (
-          <Tooltip title="移交项目">
+          <Tooltip title="Handover project">
             <CreateButton
               className={styles.transfer}
               type="double-right"
@@ -598,7 +598,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
           </Tooltip>
         )
         editButton =  (
-          <Tooltip title="编辑">
+          <Tooltip title="Edit">
             <CreateButton
               className={styles.edit}
               type="setting"
@@ -608,11 +608,11 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
         )
         deleteButton = (
           <Popconfirm
-            title="确定删除？"
+            title="confirm delete？"
             placement="bottom"
             onConfirm={this.confirmDeleteProject('onCollect', d.id)}
           >
-            <Tooltip title="删除">
+            <Tooltip title="delte">
               <CreateButton
                 className={styles.delete}
                 type="delete"
@@ -687,7 +687,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
         ProjectName = `${d.name} (${org && org.name ? org.name : ''})`
       }
       star = (
-        <Tooltip title="点赞项目">
+        <Tooltip title="like">
           <div className={styles.starWrapperPosition}>
             {StarPanel}
           </div>
@@ -695,7 +695,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
       )
 
       collectButton = (
-        <Tooltip title="取消收藏">
+        <Tooltip title="delete favorite">
           <i
             className={`iconfont icon-heart ${styles.unCollect}`}
             onClick={this.collectProject('unCollect', d)}
@@ -887,7 +887,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
               <Box.Title>
                 <Row>
                   <Col span={20}>
-                    <Icon type="bars" />搜索到的项目
+                    <Icon type="bars" />Projects found
                   </Col>
                 </Row>
               </Box.Title>
@@ -922,7 +922,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
                         <Box.Title>
                           <Row onClick={this.foldPanel('mimePanel')}>
                             <Col span={20}>
-                              <Icon type={`${this.state.mimePanel ? 'down' : 'right'}`} />我创建的项目
+                              <Icon type={`${this.state.mimePanel ? 'down' : 'right'}`} />Projects I create
                             </Col>
                           </Row>
                         </Box.Title>
@@ -940,7 +940,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
                         <Box.Title>
                           <Row onClick={this.foldPanel('joinPanel')}>
                             <Col span={20}>
-                              <Icon type={`${this.state.joinPanel ? 'down' : 'right'}`} />我参与的项目
+                              <Icon type={`${this.state.joinPanel ? 'down' : 'right'}`} />Projects I participate in
                             </Col>
                           </Row>
                         </Box.Title>
@@ -958,7 +958,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
                         <Box.Title>
                           <Row onClick={this.foldPanel('collectPanel')}>
                             <Col span={20}>
-                              <Icon type={`${this.state.collectPanel ? 'down' : 'right'}`} />我收藏的项目
+                              <Icon type={`${this.state.collectPanel ? 'down' : 'right'}`} />My favorite projects
                             </Col>
                           </Row>
                         </Box.Title>
@@ -987,7 +987,7 @@ export class Projects extends React.PureComponent<IProjectsProps, IProjectsState
                     <Box.Title>
                       <Row>
                         <Col span={20}>
-                          <Icon type="bars" />浏览历史
+                          <Icon type="bars" />Browsing History
                         </Col>
                       </Row>
                     </Box.Title>

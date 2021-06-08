@@ -102,7 +102,7 @@ export const EditableTable: <T extends object>(
       }
     })
     .concat({
-      title: '操作',
+      title: 'Operation',
       dataIndex: 'operation',
       align: 'center',
       width: 130,
@@ -119,17 +119,17 @@ export const EditableTable: <T extends object>(
                   style={{ marginRight: 8 }}
                   onClick={() => save(form, idx)}
                 >
-                  保存
+                  Save
                 </Button>
               )}
             </EditableContext.Consumer>
             {showConfirm ? (
-              <Popconfirm title="确定取消？" onConfirm={cancel}>
-                <Button size="small">取消</Button>
+              <Popconfirm title="Confirm Cancel？" onConfirm={cancel}>
+                <Button size="small">Cancel</Button>
               </Popconfirm>
             ) : (
               <Button size="small" onClick={cancel}>
-                取消
+                Cancel
               </Button>
             )}
           </>
@@ -142,15 +142,15 @@ export const EditableTable: <T extends object>(
               style={{ marginRight: 8 }}
               onClick={() => setEditingIdx(idx)}
             >
-              编辑
+              Edit
             </Button>
             {showConfirm ? (
               <Popconfirm
-                title="确定删除？"
+                title="Confirm Delete？"
                 onConfirm={() => deleteRecord(idx)}
               >
                 <Button type="danger" size="small">
-                  删除
+                  Delete
                 </Button>
               </Popconfirm>
             ) : (
@@ -159,7 +159,7 @@ export const EditableTable: <T extends object>(
                 size="small"
                 onClick={() => deleteRecord(idx)}
               >
-                删除
+                Delete
               </Button>
             )}
           </>

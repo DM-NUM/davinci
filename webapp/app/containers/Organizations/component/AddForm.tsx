@@ -47,13 +47,13 @@ export class AddForm extends React.PureComponent<IAddFormProps, IAddFormStates> 
   private tips = (type: string) => {
     switch (type) {
       case 'teamMember':
-        return '添加一个组织成员到当前团队'
+        return 'Add a member to current organization'
       case 'project':
-        return '只能添加您具有管理员权限的项目'
+        return 'Only add items that you have administrator rights'
       case 'member':
-        return '邀请一个成员加入当前组织，需要该成员确认邮件。'
+        return "Invite a member to join the current organization, the member's confirmation email is required"
       case 'team':
-        return '邀请一个团队到当前团队下级'
+        return 'Invite a team to a subordinate of the current team'
       default:
         return ''
     }
@@ -62,13 +62,13 @@ export class AddForm extends React.PureComponent<IAddFormProps, IAddFormStates> 
   private submitText = (type: string) => {
     switch (type) {
       case 'project':
-        return '添加项目'
+        return 'Add items'
       case 'member':
-        return '邀请成员'
+        return 'Invite members'
       case 'teamMember':
-        return '添加成员'
+        return 'Add members'
       case 'team':
-        return '添加团队'
+        return 'Add teams'
       default:
         return ''
     }
@@ -169,7 +169,7 @@ export class AddForm extends React.PureComponent<IAddFormProps, IAddFormStates> 
           this.props.category === 'team' ?
             <li key="createNew" className={searchLi} onClick={this.props.addHandler}>
               <span className={styles.create}>
-                创建
+                Create
               </span>
               <Icon type="plus" className={styles.iconPlus}/>
             </li> : ''
@@ -214,7 +214,7 @@ export class AddForm extends React.PureComponent<IAddFormProps, IAddFormStates> 
             <Icon type="user"/>
           </div>
           <div className={styles.title}>
-            添加{category}到<span className={styles.orgName}>{orgOrTeamName}</span>
+            Add{category}to<span className={styles.orgName}>{orgOrTeamName}</span>
           </div>
           <div className={styles.tips}>
             {this.tips(category)}

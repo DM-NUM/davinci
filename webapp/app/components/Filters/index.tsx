@@ -12,7 +12,7 @@ const styles = require('./filter.less')
 
 export function renderInputText (onChange, onSearch) {
   return (
-    <Search placeholder="请输入" onBlur={onChange} onSearch={onSearch} />
+    <Search placeholder="Character or values" onBlur={onChange} onSearch={onSearch} />
   )
 }
 
@@ -28,7 +28,7 @@ export function renderSelect (control: IGlobalControl, onChange, options) {
     <Select
       showSearch
       allowClear
-      placeholder="请选择"
+      placeholder="Please select"
       onChange={onChange}
       {...multiple && {mode: 'multiple'}}
     >
@@ -73,7 +73,7 @@ export function renderDate (filter: IGlobalControl, onChange, extraProps?) {
   if (filter.multiple) {
     return (
       <MultiDatePicker
-        placeholder="请选择"
+        placeholder="Please select a time"
         format={filter.dateFormat}
         {...onChange && {onChange}}
       />
@@ -84,7 +84,7 @@ export function renderDate (filter: IGlobalControl, onChange, extraProps?) {
         return (
           <WeekPicker
             className={styles.controlComponent}
-            placeholder="请选择"
+            placeholder="Please select a time"
             {...onChange && {onChange}}
             {...extraProps}
           />
@@ -94,7 +94,7 @@ export function renderDate (filter: IGlobalControl, onChange, extraProps?) {
         return (
           <MonthPicker
             className={styles.controlComponent}
-            placeholder="请选择"
+            placeholder="Please select a time"
             format={filter.dateFormat}
             {...onChange && {onChange}}
             {...extraProps}
@@ -105,7 +105,7 @@ export function renderDate (filter: IGlobalControl, onChange, extraProps?) {
         return (
           <DatePicker
             className={styles.controlComponent}
-            placeholder="请选择"
+            placeholder="Please select a time"
             showTime={isDatetimePicker}
             format={filter.dateFormat}
             {...onChange && {onChange: isDatetimePicker ? datetimePickerChange(onChange) : onChange}}
@@ -118,7 +118,7 @@ export function renderDate (filter: IGlobalControl, onChange, extraProps?) {
 }
 
 export function renderDateRange (filter, onChange) {
-  const placeholder: [string, string] = ['从', '到']
+  const placeholder: [string, string] = ['from', 'to']
   const { Datetime, DatetimeMinute } = DatePickerFormats
   const isDatetimePicker = [Datetime, DatetimeMinute].includes(filter.dateFormat)
   return (

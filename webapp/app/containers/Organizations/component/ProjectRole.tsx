@@ -222,13 +222,13 @@ export class ProjectRole extends React.Component<IRoleProps, IRoleStates> {
     const { projectRoles } = this.state
     const roles = projectRoles && projectRoles.length ? projectRoles : []
     const addButton =  (
-      <Tooltip placement="bottom" title="关联">
+      <Tooltip placement="bottom" title="relation">
         <Button
           type="primary"
           icon="plus"
           onClick={this.toggleModal('relationRoleVisible')}
         >
-          关联角色
+          Associated role
         </Button>
       </Tooltip>
     )
@@ -242,34 +242,34 @@ export class ProjectRole extends React.Component<IRoleProps, IRoleStates> {
       //  disabled={adminModalLoading}
         onClick={this.onRelProjectrole}
       >
-        保 存
+        Save
       </Button>
     )
 
     const columns = [
       {
-        title: '角色名称',
+        title: 'Role name',
         dataIndex: 'name',
         key: 'rolename',
         // render: (text) => <span>{text.role === 1 ? '拥有者' : '成员'}</span>
       },
       {
-          title: '设置',
+          title: 'Settings',
           dataIndex: 'user',
           // className: isHidden ? utilStyles.hide : '',
           key: 'settings',
           render: (text, record) => {
             return (
               <span>
-                <a href="javascript:;" onClick={this.toggleModal('authSettingVisible', record.id)}>权限设置</a>
+                <a href="javascript:;" onClick={this.toggleModal('authSettingVisible', record.id)}>Permission settings</a>
                 <Divider type="vertical" />
                 <Popconfirm
-                  title="确定删除？"
+                  title="Sure delete？"
                   placement="bottom"
                   onConfirm={this.props.onDeleteRelRoleProject(record.id, projectDetail.id, () => this.loadProjectRoles(projectDetail.id))}
                 >
-                  <Tooltip title="删除">
-                   <a href="javascript:;">删除角色</a>
+                  <Tooltip title="delete">
+                   <a href="javascript:;">Delete role</a>
                   </Tooltip>
                 </Popconfirm>
               </span>
@@ -281,7 +281,7 @@ export class ProjectRole extends React.Component<IRoleProps, IRoleStates> {
         <Row>
           <Col span={14}>
               <Input.Search
-                  placeholder="搜索角色"
+                  placeholder="Search role"
                   value={this.state.searchValue}
                   onChange={this.searchChange}
               />
@@ -302,7 +302,7 @@ export class ProjectRole extends React.Component<IRoleProps, IRoleStates> {
         </Row>
         <Modal
           key="roleFormKey"
-          title="关联角色"
+          title="Associated role"
           visible={this.state.relationRoleVisible}
           footer={relButton}
           onCancel={this.toggleModal('relationRoleVisible')}
@@ -321,7 +321,7 @@ export class ProjectRole extends React.Component<IRoleProps, IRoleStates> {
         </Modal>
         <Modal
           footer={null}
-          title="权限设置"
+          title="Permission settings"
           visible={this.state.authSettingVisible}
           onCancel={this.toggleModal('authSettingVisible')}
           // afterClose={this.afterChangeRoleFormClose}

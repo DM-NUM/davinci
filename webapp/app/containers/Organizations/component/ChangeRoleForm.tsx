@@ -17,7 +17,7 @@ export class ChangeRoleForm extends React.PureComponent<IChangeRoleProps, {}> {
   private tips = (type: string) => {
     switch (type) {
       case 'orgMember':
-        return '选择一个新角色'
+        return 'Choose a new role'
       case 'teamMember':
         return ''
     }
@@ -31,15 +31,15 @@ export class ChangeRoleForm extends React.PureComponent<IChangeRoleProps, {}> {
             <div className={styles.radioWrapper}>
               <Radio key={`radio${1}`} value={1} />
               <div className={styles.labelWrapper}>
-                <div className={styles.label}>拥有者</div>
-                <div className={styles.labelDesc}>组织的管理者，可以添加和删除组织成员并创建团队</div>
+                <div className={styles.label}>Owner</div>
+                <div className={styles.labelDesc}>Managers of the organization, can add and remove organization members and create teams</div>
               </div>
             </div>
             <div className={styles.radioWrapper}>
               <Radio key={`radio${2}`} value={0} />
               <div className={styles.labelWrapper}>
-                <div className={styles.label}>成员</div>
-                <div className={styles.labelDesc}>组织内的普通成员，进入团队后，由团队的 Maintainer 分配项目模块权限</div>
+                <div className={styles.label}>Member</div>
+                <div className={styles.labelDesc}>Ordinary members of the organization, after entering the team, the team's maintainer assigns project module permissions</div>
               </div>
             </div>
           </RadioGroup>
@@ -51,14 +51,14 @@ export class ChangeRoleForm extends React.PureComponent<IChangeRoleProps, {}> {
               <Radio key={`radio${1}`} value={1} />
               <div className={styles.labelWrapper}>
                 <div className={styles.label}>Maintainer</div>
-                <div className={styles.labelDesc}>团队的管理者，可以指定该团队在项目中的模块权限</div>
+                <div className={styles.labelDesc}>The manager of the team, which can specify the module permissions of the team in the project</div>
               </div>
             </div>
             <div className={styles.radioWrapper}>
               <Radio key={`radio${2}`} value={0} />
               <div className={styles.labelWrapper}>
                 <div className={styles.label}>Member</div>
-                <div className={styles.labelDesc}>组织内的普通成员，进入团队后，由团队的 Maintainer 分配项目模块权限</div>
+                <div className={styles.labelDesc}>"Ordinary members of the organization, after entering the team, the team's maintainer assigns project module permissions"</div>
               </div>
             </div>
           </RadioGroup>
@@ -80,14 +80,14 @@ export class ChangeRoleForm extends React.PureComponent<IChangeRoleProps, {}> {
         disabled={modalLoading}
         onClick={this.props.changeHandler}
       >
-        保 存
+        Save
       </Button>
     )]
     return (
       <div className={styles.formWrapper}>
         <div className={styles.header}>
           <div className={styles.title}>
-            改变{memberName}在<span className={styles.orgName}>{orgOrTeamName}</span>的角色
+            Change{memberName}in<span className={styles.orgName}>{orgOrTeamName}</span>'s role
           </div>
           <div className={styles.desc}>
             <b>{this.tips(category)}</b>

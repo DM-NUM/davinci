@@ -32,7 +32,7 @@ export default function NotFound () {
   return (
     <div className={styles.notFound}>
       <i className="iconfont icon-found" />
-      <h1>您来到了没有数据的地方</h1>
+      <h1>Sorry, there are not any data</h1>
     </div>
   )
 }

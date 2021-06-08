@@ -330,7 +330,7 @@ export class Editor extends React.Component<IEditorProps, IEditorStates> {
       nativeQuery = cachedQueryConditions.nativeQuery
     }
 
-    let groups = cols.concat(rows).filter((g) => g.name !== '指标名称').map((g) => g.name)
+    let groups = cols.concat(rows).filter((g) => g.name !== 'Index Name').map((g) => g.name)
     let aggregators =  metrics.map((m) => ({
       column: decodeMetricName(m.name),
       func: m.agg
@@ -559,7 +559,7 @@ export class Editor extends React.Component<IEditorProps, IEditorStates> {
     const { currentDisplay, currentSlide, currentLayersOperationInfo } = this.props
     const ids = Object.keys(currentLayersOperationInfo).filter((id) => currentLayersOperationInfo[id].selected)
     if (ids.length <= 0) {
-      message.warning('请选择图层')
+      message.warning('Please select layer')
       return
     }
     this.props.onDeleteDisplayLayers(currentDisplay.id, currentSlide.id, ids)
@@ -611,7 +611,7 @@ export class Editor extends React.Component<IEditorProps, IEditorStates> {
   private copyLayers = () => {
     const { currentSlide, currentSelectedLayers, onCopySlideLayers } = this.props
     if (!currentSelectedLayers.length) {
-      message.warning('请选择图层')
+      message.warning('Please select layer')
       return
     }
     const { slideParams } = this.state

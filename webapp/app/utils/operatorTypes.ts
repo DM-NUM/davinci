@@ -13,17 +13,17 @@ export enum OperatorTypes {
 }
 
 export const OperatorTypesLocale = {
-  [OperatorTypes.Equal]: '等于',
-  [OperatorTypes.NotEqual]: '不等于',
-  [OperatorTypes.Contain]: '包含',
-  [OperatorTypes.NotContain]: '不包含',
-  [OperatorTypes.Between]: '在……之间',
-  [OperatorTypes.In]: '在……范围内',
-  [OperatorTypes.NotIn]: '不在……范围内',
-  [OperatorTypes.LessThan]: '小于',
-  [OperatorTypes.GreaterThan]: '大于',
-  [OperatorTypes.LessThanOrEqual]: '小于等于',
-  [OperatorTypes.GreaterThanOrEqual]: '大于等于'
+  [OperatorTypes.Equal]: 'Equal',
+  [OperatorTypes.NotEqual]: 'Not equal',
+  [OperatorTypes.Contain]: 'Contain',
+  [OperatorTypes.NotContain]: 'Not contain',
+  [OperatorTypes.Between]: 'Between',
+  [OperatorTypes.In]: 'IN',
+  [OperatorTypes.NotIn]: 'Not in',
+  [OperatorTypes.LessThan]: 'Less than',
+  [OperatorTypes.GreaterThan]: 'Greater than',
+  [OperatorTypes.LessThanOrEqual]: 'Less than or equal',
+  [OperatorTypes.GreaterThanOrEqual]: 'Greater than or equal'
 }
 
 export const LinkageOperatorTypes = [

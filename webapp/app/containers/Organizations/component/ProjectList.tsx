@@ -358,7 +358,7 @@ export class ProjectList extends React.PureComponent<IProjectsProps, IProjectsSt
        CreateButton = ComponentPermission(currentOrganization, CREATE_ORGANIZATION_PROJECT)(Button)
     }
     const addButton =  (
-          <Tooltip placement="bottom" title="创建">
+          <Tooltip placement="bottom" title="Create">
             <CreateButton
               type="primary"
               icon="plus"
@@ -405,7 +405,7 @@ export class ProjectList extends React.PureComponent<IProjectsProps, IProjectsSt
         <Row>
           <Col span={16}>
             <Input.Search
-              placeholder="搜索项目"
+              placeholder="Search Projects"
               onChange={this.onSearchProject}
             />
           </Col>
@@ -443,7 +443,7 @@ export class ProjectList extends React.PureComponent<IProjectsProps, IProjectsSt
         </Modal>
         <Modal
           wrapClassName="ant-modal-large ant-modal-center"
-          title="项目设置"
+          title="Project settings"
           visible={editFormVisible}
           footer={null}
           onCancel={this.hideProjectForm}

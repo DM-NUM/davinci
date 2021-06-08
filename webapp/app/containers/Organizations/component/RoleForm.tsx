@@ -71,12 +71,12 @@ export class RoleForm extends React.PureComponent<IRoleFormProps, {}> {
             </FormItem>
           </Col>
           <Col span={24}>
-            <FormItem label="名称" {...commonFormItemStyle}>
+            <FormItem label="Name" {...commonFormItemStyle}>
               {getFieldDecorator('name', {
                 initialValue: '',
                 rules: [{
                     required: true,
-                    message: 'Name 不能为空'
+                    message: 'Name can not be empty'
                   }]
               })(
                 <Input placeholder="Name" />
@@ -84,7 +84,7 @@ export class RoleForm extends React.PureComponent<IRoleFormProps, {}> {
             </FormItem>
           </Col>
           <Col span={24}>
-            <FormItem label="描述" {...commonFormItemStyle}>
+            <FormItem label="Description" {...commonFormItemStyle}>
               {getFieldDecorator('description', {
                 initialValue: ''
               })(

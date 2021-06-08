@@ -136,7 +136,7 @@ export class JoinOrganization extends React.PureComponent <IJoinOrganizationProp
             <div className={styles.input}>
               <Icon type="user"/>
               <input
-                placeholder="用户名"
+                placeholder="User Name"
                 value={username}
                 onFocus={this.bindDocumentKeypress}
                 onBlur={this.unbindDocumentKeypress}
@@ -146,7 +146,7 @@ export class JoinOrganization extends React.PureComponent <IJoinOrganizationProp
             <div className={styles.input}>
               <Icon type="unlock"/>
               <input
-                placeholder="密码"
+                placeholder="Password"
                 type="password"
                 value={password}
                 onFocus={this.bindDocumentKeypress}
@@ -164,7 +164,7 @@ export class JoinOrganization extends React.PureComponent <IJoinOrganizationProp
                 ? <Icon type="loading"/>
                 : ''
             }
-            登 录
+            Login
           </button>
         </div>
       )
@@ -172,7 +172,7 @@ export class JoinOrganization extends React.PureComponent <IJoinOrganizationProp
         <div className={styles.window}>
           <Helmet title="Join Organization" />
           <h1 className={styles.joinOrganizationLoadingContent}>
-            {this.state.needLogin ? '加入组织中，请稍候…' : ''}
+            {this.state.needLogin ? 'Join organization，pelaese wait for a minute…' : ''}
           </h1>
         </div>
       )

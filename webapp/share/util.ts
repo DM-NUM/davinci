@@ -30,7 +30,7 @@ export function getShareClientId (): string {
       localStorage.setItem('SHARE_CLIENT_ID', shareClientId)
     }
   } catch (err) {
-    message.error(`获取分享页客户端ID失败：${err.message}`)
+    message.error(`Failed to get client ID of shared page: ${err.message}`)
   }
   return shareClientId
 }

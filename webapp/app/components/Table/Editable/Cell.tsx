@@ -57,7 +57,7 @@ const EditableCell: React.FC<IEditableCellProps<object>> = (props) => {
       {editing ? (
         <FormItem style={{ margin: 0 }}>
           {form.getFieldDecorator(dataIndex, {
-            rules: [{ required: true, message: '不能为空' }],
+            rules: [{ required: true, message: 'Can not be empty' }],
             initialValue: record[dataIndex],
             valuePropName: inputType === 'checkbox' ? 'checked' : 'value'
           })(renderInputControl(inputType, !!autoFocus))}

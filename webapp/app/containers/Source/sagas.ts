@@ -118,7 +118,7 @@ export function* testSourceConnection (action: SourceActionType) {
       data: payload.testSource
     })
     yield put(SourceActions.sourceConnected())
-    message.success('测试成功')
+    message.success('Test successfully')
   } catch (err) {
     yield put(SourceActions.testSourceConnectionFail())
     errorHandler(err)
@@ -139,7 +139,7 @@ export function* resetSourceConnection (action: SourceActionType) {
       }
     })
     yield put(SourceActions.sourceReset())
-    message.success('连接重置成功')
+    message.success('Connection reset successful')
     resolve()
   } catch (err) {
     yield put(SourceActions.resetSourceConnectionFail())

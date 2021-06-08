@@ -228,7 +228,7 @@ export function* initiateDownloadTask (action): IterableIterator<any> {
       url: `${api.download}/share/submit/${type}/${shareClientId}/${dataToken}`,
       data: downloadParams
     })
-    message.success('下载任务创建成功！')
+    message.success('Download task created successfully!')
     yield put(DownloadTaskInitiated(type, itemId))
   } catch (err) {
     yield put(initiateDownloadTaskFail(err))

@@ -85,8 +85,8 @@ export const DOWNLOAD_STATUS_COLORS = {
 }
 
 export const DOWNLOAD_STATUS_LOCALE = {
-  [DownloadStatus.Processing]: '处理中',
-  [DownloadStatus.Success]: '成功',
-  [DownloadStatus.Failed]: '失败',
-  [DownloadStatus.Downloaded]: '已下载'
+  [DownloadStatus.Processing]: 'Downloading',
+  [DownloadStatus.Success]: 'Success',
+  [DownloadStatus.Failed]: 'Fail',
+  [DownloadStatus.Downloaded]: 'Finished Download'
 }

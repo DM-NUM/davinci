@@ -125,7 +125,7 @@ export class Organizations extends React.PureComponent<IOrganizationsProps, IOrg
                 <Breadcrumb className={utilStyles.breadcrumb}>
                   <Breadcrumb.Item>
                     <Link to="/account/organizations">
-                      <Icon type="bars" />我的组织
+                      <Icon type="bars" />My Organizations
                     </Link>
                   </Breadcrumb.Item>
                 </Breadcrumb>

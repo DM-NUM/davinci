@@ -176,19 +176,19 @@ export class ProjectAdmin extends React.PureComponent<IProjectAdminProps, IProje
 
     const admins = projectAdmins && projectAdmins.length ? projectAdmins : []
     const addButton =  (
-        <Tooltip placement="bottom" title="添加">
+        <Tooltip placement="bottom" title="Add">
           <Button
             type="primary"
             icon="plus"
             onClick={this.toggleAdminForm}
           >
-            添加管理员
+            Add administrator
           </Button>
         </Tooltip>
       )
     const columns = [
 {
-    title: '管理员名称',
+    title: 'Admin name',
     dataIndex: 'user',
     key: 'userKey',
     render: (text) => {
@@ -196,7 +196,7 @@ export class ProjectAdmin extends React.PureComponent<IProjectAdminProps, IProje
     }
 },
 {
-    title: '设置',
+    title: 'Settings',
     dataIndex: 'id',
     // className: isHidden ? utilStyles.hide : '',
     key: 'settings',
@@ -205,11 +205,11 @@ export class ProjectAdmin extends React.PureComponent<IProjectAdminProps, IProje
         return (
         <span>
           <Popconfirm
-            title="确定删除？"
+            title="Sure delete？"
             placement="bottom"
             onConfirm={this.deleteAdmin({id, relationId: Number(text)})}
           >
-            <a href="javascript:;" onClick={this.stopPPG}>删除管理员</a>
+            <a href="javascript:;" onClick={this.stopPPG}>Delete admin</a>
           </Popconfirm>
         </span>
         )
@@ -225,7 +225,7 @@ export class ProjectAdmin extends React.PureComponent<IProjectAdminProps, IProje
       //  disabled={adminModalLoading}
         onClick={this.onSaveAdmin}
       >
-        保 存
+        Save
       </Button>
     )
     return (
@@ -233,7 +233,7 @@ export class ProjectAdmin extends React.PureComponent<IProjectAdminProps, IProje
             <Row>
             <Col span={14}>
                 <Input.Search
-                    placeholder="搜索管理员"
+                    placeholder="Search admin"
                     value={this.state.searchValue}
                     onChange={this.searchChange}
                 />
@@ -254,7 +254,7 @@ export class ProjectAdmin extends React.PureComponent<IProjectAdminProps, IProje
             </Row>
             <Modal
                 key="adminFormKey"
-                title="添加管理员"
+                title="Add administrator"
                 visible={this.state.adminFormVisible}
                 footer={adminButton}
                 onCancel={this.toggleAdminForm}

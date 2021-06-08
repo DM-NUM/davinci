@@ -70,7 +70,7 @@ export class Profile extends React.PureComponent<IProfileProps, {}> {
             <Breadcrumb className={utilStyles.breadcrumb}>
               <Breadcrumb.Item>
                 <Link to="/account/profile">
-                  <Icon type="bars" />个人信息
+                  <Icon type="bars" />User Information
                 </Link>
               </Breadcrumb.Item>
             </Breadcrumb>
@@ -98,7 +98,7 @@ export class Profile extends React.PureComponent<IProfileProps, {}> {
                     </FormItem>
                     <FormItem
                       {...commonFormItemStyle}
-                      label="姓名"
+                      label="Name"
                     >
                       {getFieldDecorator('name', {
                         initialValue: '',
@@ -111,7 +111,7 @@ export class Profile extends React.PureComponent<IProfileProps, {}> {
                   <Col>
                     <FormItem
                       {...commonFormItemStyle}
-                      label="描述"
+                      label="Description"
                     >
                       {getFieldDecorator('description', {
                         initialValue: ''
@@ -123,7 +123,7 @@ export class Profile extends React.PureComponent<IProfileProps, {}> {
                   <Col>
                     <FormItem
                       {...commonFormItemStyle}
-                      label="部门"
+                      label="Department"
                     >
                       {getFieldDecorator('department', {
                         initialValue: ''
@@ -133,7 +133,7 @@ export class Profile extends React.PureComponent<IProfileProps, {}> {
                     </FormItem>
                   </Col>
                   <Col offset={4}>
-                    <Button size="large" type="primary" onClick={this.submit}>保存设置</Button>
+                    <Button size="large" type="primary" onClick={this.submit}>Save Settings</Button>
                   </Col>
                 </Row>
               </Form>

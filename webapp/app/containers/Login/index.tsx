@@ -135,11 +135,11 @@ export class Login extends React.PureComponent<ILoginProps, ILoginStates> {
               ? <Icon type="loading" />
               : ''
           }
-          登 录
+          Login
         </button>
         <p className={styles.tips}>
-          <span>还没有账号？ </span>
-          <a href="javascript:;" onClick={this.toSignUp}>注册davinci账号</a>
+          <span>no account yet？ </span>
+          <a href="javascript:;" onClick={this.toSignUp}>register account</a>
         </p>
       </div>
     )

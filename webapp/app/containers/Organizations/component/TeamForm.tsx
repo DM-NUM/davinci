@@ -83,28 +83,28 @@ export class ProjectsForm extends React.PureComponent<IProjectsFormProps, {}> {
         disabled={modalLoading}
         onClick={this.props.onModalOk}
       >
-        保 存
+        Save
       </Button>
     )]
     return (
       <div className={styles.formWrapper}>
         <div className={styles.header}>
           <div className={styles.title}>
-            创建团队
+            Create team
           </div>
           <div className={styles.desc}>
-            团队隶属于组织，可以在团队中指定项目的模块权限
+          The team belongs to the organization, and the module permissions of the project can be specified in the team
           </div>
         </div>
         <div className={styles.body}>
           <Form>
             <Row gutter={8}>
               <Col span={24}>
-                <FormItem label="名称" {...commonFormItemStyle}>
+                <FormItem label="Name" {...commonFormItemStyle}>
                   {getFieldDecorator('name', {
                     rules: [{
                       required: true,
-                      message: 'Name 不能为空'
+                      message: 'Name can not be empty'
                     }, {
                       validator: this.props.onCheckUniqueName
                     }]
@@ -114,7 +114,7 @@ export class ProjectsForm extends React.PureComponent<IProjectsFormProps, {}> {
                 </FormItem>
               </Col>
               <Col span={24}>
-                <FormItem label="描述" {...commonFormItemStyle}>
+                <FormItem label="Description" {...commonFormItemStyle}>
                   {getFieldDecorator('description', {
                     initialValue: ''
                   })(
@@ -126,7 +126,7 @@ export class ProjectsForm extends React.PureComponent<IProjectsFormProps, {}> {
                 </FormItem>
               </Col>
               <Col span={24}>
-                <FormItem label="上级" {...commonFormItemStyle}>
+                <FormItem label="Parent team" {...commonFormItemStyle}>
                   {getFieldDecorator('parentTeamId', {
                     initialValue: ''
                   })(

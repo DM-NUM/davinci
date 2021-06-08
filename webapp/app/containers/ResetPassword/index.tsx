@@ -55,7 +55,7 @@ export class ResetPassword extends React.PureComponent<IResetPasswordProps> {
             <Breadcrumb className={utilStyles.breadcrumb}>
               <Breadcrumb.Item>
                 <Link to="/account/resetPassword">
-                  <Icon type="bars" />修改密码
+                  <Icon type="bars" />Reset password
                 </Link>
               </Breadcrumb.Item>
             </Breadcrumb>

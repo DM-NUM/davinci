@@ -48,7 +48,7 @@ export function* getDisplay (action: ShareDisplayActionType) {
   } catch (err) {
     message.destroy()
     yield put(loadDisplayFail(err))
-    message.error('获取 Display 信息失败，请刷新重试')
+    message.error('Failed to get Display information, please refresh and try again')
     reject(err)
   }
 }

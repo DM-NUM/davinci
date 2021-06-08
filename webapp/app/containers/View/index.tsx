@@ -135,11 +135,11 @@ export class ViewList extends React.PureComponent<IViewListProps, IViewListState
     const sourceNames = views.map(({ sourceName }) => sourceName)
 
     const columns: Array<ColumnProps<IViewBase>> = [{
-      title: '名称',
+      title: 'Name',
       dataIndex: 'name',
       filterDropdown: (
         <SearchFilterDropdown
-          placeholder="名称"
+          placeholder="Name"
           value={tempFilterViewName}
           onChange={this.filterViewNameChange}
           onSearch={this.searchView}
@@ -150,7 +150,7 @@ export class ViewList extends React.PureComponent<IViewListProps, IViewListState
       sorter: (a, b) => (a.name > b.name ? 1 : -1),
       sortOrder: tableSorter && tableSorter.columnKey === 'name' ? tableSorter.order : void 0
     }, {
-      title: '描述',
+      title: 'Description',
       dataIndex: 'description'
     }, {
       title: 'Source',
@@ -175,23 +175,23 @@ export class ViewList extends React.PureComponent<IViewListProps, IViewListState
 
     if (viewPermission) {
       columns.push({
-        title: '操作',
+        title: 'Action',
         width: 150,
         className: utilStyles.textAlignCenter,
         render: (_, record) => (
           <span className="ant-table-action-column">
-            <Tooltip title="复制">
+            <Tooltip title="Copy">
               <EditButton icon="copy" shape="circle" type="ghost" onClick={this.copyView(record)} />
             </Tooltip>
-            <Tooltip title="修改">
+            <Tooltip title="Change">
               <EditButton icon="edit" shape="circle" type="ghost" onClick={this.editView(record.id)} />
             </Tooltip>
             <Popconfirm
-              title="确定删除？"
+              title="Sure delete？"
               placement="bottom"
               onConfirm={this.deleteView(record.id)}
             >
-              <Tooltip title="删除">
+              <Tooltip title="Delete">
                 <AdminButton icon="delete" shape="circle" type="ghost" />
               </Tooltip>
             </Popconfirm>
@@ -245,7 +245,7 @@ export class ViewList extends React.PureComponent<IViewListProps, IViewListState
       this.setState({
         copyModalVisible: false
       })
-      message.info('View 复制成功')
+      message.info('View copy successfully')
     })
   }
 
@@ -306,7 +306,7 @@ export class ViewList extends React.PureComponent<IViewListProps, IViewListState
                   View List
                 </Box.Title>
                 <Box.Tools>
-                  <Tooltip placement="bottom" title="新增">
+                  <Tooltip placement="bottom" title="Add">
                     <AdminButton type="primary" icon="plus" onClick={this.addView} />
                   </Tooltip>
                 </Box.Tools>

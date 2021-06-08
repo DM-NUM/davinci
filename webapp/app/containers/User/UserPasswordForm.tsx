@@ -32,7 +32,7 @@ interface IUserPasswordFormProps {
 export class UserPasswordForm extends React.PureComponent<IUserPasswordFormProps, {}> {
   private checkPasswordConfirm = (rule, value, callback) => {
     if (value && value !== this.props.form.getFieldValue('newPass')) {
-      callback('两次输入的密码不一致')
+      callback('Passwords entered twice are inconsistent')
     } else {
       callback()
     }
@@ -63,15 +63,15 @@ export class UserPasswordForm extends React.PureComponent<IUserPasswordFormProps
                 <Input />
               )}
             </FormItem>
-            <FormItem label="旧密码" {...commonFormItemStyle}>
+            <FormItem label="Old password" {...commonFormItemStyle}>
               {getFieldDecorator('oldPass', {
                 rules: [{
                   required: true,
-                  message: '旧密码不能为空'
+                  message: 'Old password can not be empty'
                 }, {
                   min: 6,
                   max: 20,
-                  message: '密码长度为6-20位'
+                  message: 'Password length is 6-20'
                 }]
               })(
                 <Input type="password" placeholder="Your Password" />
@@ -79,15 +79,15 @@ export class UserPasswordForm extends React.PureComponent<IUserPasswordFormProps
             </FormItem>
           </Col>
           <Col span={24}>
-            <FormItem label="新密码" {...commonFormItemStyle}>
+            <FormItem label="New password" {...commonFormItemStyle}>
               {getFieldDecorator('newPass', {
                 rules: [{
                   required: true,
-                  message: '新密码不能为空'
+                  message: 'New password can not be empty'
                 }, {
                   min: 6,
                   max: 20,
-                  message: '密码长度为6-20位'
+                  message: 'Password length is 6-20'
                 }, {
                   validator: this.forceCheckConfirm
                 }]
@@ -97,11 +97,11 @@ export class UserPasswordForm extends React.PureComponent<IUserPasswordFormProps
             </FormItem>
           </Col>
           <Col span={24}>
-            <FormItem label="确认新密码" {...commonFormItemStyle}>
+            <FormItem label="Confirm new password" {...commonFormItemStyle}>
               {getFieldDecorator('confirmPassword', {
                 rules: [{
                   required: true,
-                  message: '请确认密码'
+                  message: 'Please confirm new password'
                 }, {
                   validator: this.checkPasswordConfirm
                 }]

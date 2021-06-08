@@ -95,7 +95,7 @@ export class UploadAvatar extends React.PureComponent<IUploadAvatarProps, IUploa
       <div className={styles.avatar}>
         <Avatar path={avatar} size="large" enlarge={true}/>
         <div className={styles.uploadAvatar}>
-          <div className={styles.uploadTitle}>上传新图像</div>
+          <div className={styles.uploadTitle}>Upload New Picture</div>
           <Upload
             name="file"
             showUploadList={false}
@@ -104,9 +104,9 @@ export class UploadAvatar extends React.PureComponent<IUploadAvatarProps, IUploa
             beforeUpload={this.beforeUpload}
             onChange={this.handleChange}
           >
-            <Button size="large">选择图片</Button>
+            <Button size="large">Select a Picture</Button>
           </Upload>
-          <p className={styles.uploadDesc}>图片大小不超过1MB</p>
+          <p className={styles.uploadDesc}>Image Size is Less Than 1MB</p>
         </div>
       </div>
     )

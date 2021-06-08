@@ -701,19 +701,19 @@ export class Dashboard extends React.Component<IDashboardProps, IDashboardStates
     let modalTitle = ''
     switch (formType) {
       case 'add':
-        modalTitle = '新增'
+        modalTitle = 'Add'
         break
       case 'edit':
-        modalTitle = '修改'
+        modalTitle = 'Modify'
         break
       case 'copy':
-        modalTitle = '复制'
+        modalTitle = 'Copy'
         break
       case 'move':
-        modalTitle = '移动'
+        modalTitle = 'Move'
         break
       case 'delete':
-        modalTitle = '提示'
+        modalTitle = 'Prompt'
         break
     }
 
@@ -723,7 +723,7 @@ export class Dashboard extends React.Component<IDashboardProps, IDashboardStates
         size="large"
         onClick={this.hideDashboardForm}
       >
-        取 消
+        Cancel
       </Button>
     ), (
       <Button
@@ -733,7 +733,7 @@ export class Dashboard extends React.Component<IDashboardProps, IDashboardStates
         loading={modalLoading}
         onClick={this.onModalOk}
       >
-        {formType === 'delete' ? '确 定' : '保 存'}
+        {formType === 'delete' ? 'Ok' : 'Save'}
       </Button>
     )]
 
@@ -807,14 +807,14 @@ export class Dashboard extends React.Component<IDashboardProps, IDashboardStates
                       visible={searchVisible}
                       onVisibleChange={this.searchVisibleChange}
                     >
-                      <Tooltip placement="top" title="搜索">
+                      <Tooltip placement="top" title="Search">
                         <Icon
                           type="search"
                           className={styles.search}
                         />
                       </Tooltip>
                     </Popover>
-                    <Tooltip placement="top" title="新增">
+                    <Tooltip placement="top" title="Add">
                       <AdminIcon
                         type="plus"
                         className={styles.plus}
@@ -825,12 +825,12 @@ export class Dashboard extends React.Component<IDashboardProps, IDashboardStates
                       placement="bottom"
                       content={
                         <ul className={styles.menu}>
-                          <li onClick={this.onCollapseAll}>收起全部</li>
-                          <li onClick={this.onExpandAll}>展开全部</li>
+                          <li onClick={this.onCollapseAll}>Collapse All</li>
+                          <li onClick={this.onExpandAll}>Expand All</li>
                         </ul>}
                       trigger="click"
                     >
-                      <Tooltip placement="top" title="更多">
+                      <Tooltip placement="top" title="More">
                         <Icon
                           type="ellipsis"
                           className={styles.more}
@@ -863,7 +863,7 @@ export class Dashboard extends React.Component<IDashboardProps, IDashboardStates
                   : (
                     <div className={styles.noDashboard}>
                       <img src={require('assets/images/noDashboard.png')} onClick={this.onAddItem}/>
-                      <p>请创建文件夹或 Dashboard</p>
+                      <p>Please Create Folder or Dashboard</p>
                     </div>
                   )
                 }

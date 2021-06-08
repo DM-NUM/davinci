@@ -68,13 +68,13 @@ export function Navigator (props: INavigatorProps) {
     <Menu>
       <Menu.Item key="0">
         <Link to="/account" >
-          用户设置
+          User Setting
         </Link>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="3">
         <a href="javascript:;" onClick={onLogout}>
-          退出登录
+          Login out
         </a>
       </Menu.Item>
     </Menu>

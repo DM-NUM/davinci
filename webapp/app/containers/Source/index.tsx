@@ -191,11 +191,11 @@ export class SourceList extends React.PureComponent<ISourceListProps, ISourceLis
     const { resetLoading } = this.props
 
     const columns: Array<ColumnProps<ISource>> = [{
-      title: '名称',
+      title: 'Name',
       dataIndex: 'name',
       filterDropdown: (
         <SearchFilterDropdown
-          placeholder="名称"
+          placeholder="Name"
           value={tempFilterSourceName}
           onChange={this.filterSourceNameChange}
           onSearch={this.searchSource}
@@ -208,10 +208,10 @@ export class SourceList extends React.PureComponent<ISourceListProps, ISourceLis
       sorter: (a, b) => a.name > b.name ? -1 : 1,
       sortOrder: tableSorter && tableSorter.columnKey === 'name' ? tableSorter.order : void 0
     }, {
-      title: '描述',
+      title: 'Description',
       dataIndex: 'description'
     }, {
-      title: '类型',
+      title: 'Type',
       dataIndex: 'type',
       filters: [{
         text: 'JDBC',
@@ -241,28 +241,28 @@ export class SourceList extends React.PureComponent<ISourceListProps, ISourceLis
 
     if (sourcePermission) {
       columns.push({
-        title: '操作',
+        title: 'Action',
         key: 'action',
         width: 180,
         render: (_, record) => (
           <span className="ant-table-action-column">
-            <Tooltip title="重置连接">
+            <Tooltip title="Reset connection">
               <EditButton icon="reload" shape="circle" type="ghost" disabled={resetLoading} onClick={this.openResetSource(record)} />
             </Tooltip>
-            <Tooltip title="修改">
+            <Tooltip title="Modify">
               <EditButton icon="edit" shape="circle" type="ghost" onClick={this.editSource(record.id)} />
             </Tooltip>
             <Popconfirm
-              title="确定删除？"
+              title="Sure delete？"
               placement="bottom"
               onConfirm={this.deleteSource(record.id)}
             >
-              <Tooltip title="删除">
+              <Tooltip title="Delete">
                 <AdminButton icon="delete" shape="circle" type="ghost" />
               </Tooltip>
             </Popconfirm>
             {
-              record && record.type === 'csv' ? <Tooltip title="上传">
+              record && record.type === 'csv' ? <Tooltip title="upload">
                 <EditButton icon="upload" shape="circle" type="ghost" onClick={this.showUpload(record.id)} />
               </Tooltip> : ''
             }
@@ -440,7 +440,7 @@ export class SourceList extends React.PureComponent<ISourceListProps, ISourceLis
         version
       })
     } else {
-      message.error('连接 Url 都不能为空')
+      message.error('Url can not be empty')
     }
   }
 
@@ -480,7 +480,7 @@ export class SourceList extends React.PureComponent<ISourceListProps, ISourceLis
       }
     }
     if (info.file.status === 'done') {
-      message.success(`${info.file.name} 文件上传成功`)
+      message.success(`${info.file.name} File uploaded successfully`)
       this.setState({
         formStep: 2,
         uploadDisabled: true
@@ -546,7 +546,7 @@ export class SourceList extends React.PureComponent<ISourceListProps, ISourceLis
                 <Icon type="bars" />Source List
               </Box.Title>
               <Box.Tools>
-                <Tooltip placement="bottom" title="新增">
+                <Tooltip placement="bottom" title="Add">
                   <AdminButton type="primary" icon="plus" onClick={this.addSource} />
                 </Tooltip>
               </Box.Tools>

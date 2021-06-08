@@ -78,7 +78,7 @@ export class CommonTransfer extends React.PureComponent<ICommonTransferProps, IC
           <Col span={24}>
             <Transfer
               showSearch
-              titles={['列表', '已选']}
+              titles={['List', 'Selected']}
               listStyle={{width: '210px'}}
               rowKey={this.props.rowKeys}
               dataSource={this.state.dataSource}

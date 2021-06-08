@@ -71,7 +71,7 @@ export class LoginForm extends React.PureComponent<ILoginFormProps, {}> {
         <div className={styles.input}>
           <Icon type="user" />
           <input
-            placeholder="用户名"
+            placeholder="Username"
             value={username}
             onFocus={this.bindDocumentKeypress}
             onBlur={this.unbindDocumentKeypress}
@@ -81,7 +81,7 @@ export class LoginForm extends React.PureComponent<ILoginFormProps, {}> {
         <div className={styles.input}>
           <Icon type="unlock" />
           <input
-            placeholder="密码"
+            placeholder="Password"
             type="password"
             value={password}
             onFocus={this.bindDocumentKeypress}

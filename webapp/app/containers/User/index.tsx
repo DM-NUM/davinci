@@ -393,7 +393,7 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
       sorter: (a, b) => a.email > b.email ? -1 : 1,
       sortOrder: tableSortedInfo.columnKey === 'email' ? tableSortedInfo.order : void 0
     }, {
-      title: '姓名',
+      title: 'Name',
       dataIndex: 'name',
       key: 'name',
       filterDropdown: (
@@ -409,42 +409,42 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
       sorter: (a, b) => a.name > b.name ? -1 : 1,
       sortOrder: tableSortedInfo.columnKey === 'name' ? tableSortedInfo.order : void 0
     }, {
-      title: '职位',
+      title: 'Job',
       dataIndex: 'title',
       key: 'title'
     }, {
-      title: '用户类型',
+      title: 'User type',
       dataIndex: 'admin',
       key: 'admin',
       filters: [{
-        text: '管理员',
+        text: 'Admin',
         value: true
       }, {
-        text: '普通用户',
+        text: 'Ordinary user',
         value: false
       }],
       filterMultiple: false,
       onFilter: (val, record) => `${record.admin}` === val,
-      render: (text, record) => record.admin ? '管理员' : '普通用户'
+      render: (text, record) => record.admin ? 'Admin' : 'Ordinary user'
     }, {
-      title: '操作',
+      title: 'Action',
       key: 'action',
       width: 180,
       className: `${utilStyles.textAlignCenter}`,
       render: (text, record) => (
         <span className="ant-table-action-column">
-          <Tooltip title="基本信息">
+          <Tooltip title="Basic information">
             <Button icon="user" shape="circle" type="ghost" onClick={this.showInfo(record.id)} />
           </Tooltip>
-          <Tooltip title="修改密码">
+          <Tooltip title="Change password">
             <Button icon="edit" shape="circle" type="ghost" onClick={this.showPassword(record.id)} />
           </Tooltip>
           <Popconfirm
-            title="确定删除？"
+            title="Sure delete？"
             placement="bottom"
             onConfirm={onDeleteUser(record.id)}
           >
-            <Tooltip title="删除">
+            <Tooltip title="Delete">
               <Button icon="delete" shape="circle" type="ghost" />
             </Tooltip>
           </Popconfirm>
@@ -458,7 +458,7 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
       showSizeChanger: true
     }
 
-    const userModalTitle = formType === 'add' ? '新增用户' : '修改基本信息'
+    const userModalTitle = formType === 'add' ? 'Add user' : 'Edit basic information'
 
     const addModalButtons = userFormStep
       ? [(
@@ -469,7 +469,7 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
           className={utilStyles.modalLeftButton}
           onClick={this.showGroupForm}
         >
-          新增用户组
+          Add user group
         </Button>
       ), (
         <Button
@@ -477,7 +477,7 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
           size="large"
           onClick={this.changeUserFormStep(0)}
         >
-          上一步
+          Previous step
         </Button>
       ), (
         <Button
@@ -488,7 +488,7 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
           disabled={formLoading}   // 防多次提交
           onClick={this.onUserModalOk}
         >
-          保 存
+          Save
         </Button>
       )]
       : [(
@@ -498,7 +498,7 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
           type="primary"
           onClick={this.changeUserFormStep(1)}
         >
-          下一步
+          Next step
         </Button>
       )]
 
@@ -508,7 +508,7 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
         size="large"
         onClick={this.hideGroupForm}
       >
-        取 消
+        Cancel
       </Button>
     ), (
       <Button
@@ -519,7 +519,7 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
         disabled={modalLoading}
         onClick={this.onGroupAddModalOk}
       >
-        保 存
+        Save
       </Button>
     )
     ])
@@ -545,7 +545,7 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
                 <Icon type="bars" />User List
               </Box.Title>
               <Box.Tools>
-                <Tooltip placement="bottom" title="新增">
+                <Tooltip placement="bottom" title="Add">
                   <Button type="primary" icon="plus" onClick={this.showAdd} />
                 </Tooltip>
               </Box.Tools>
@@ -580,8 +580,8 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
                 />
               </Modal>
               <Modal
-                title="修改密码"
-                okText="保存"
+                title="Change password"
+                okText="Save"
                 wrapClassName="ant-modal-small"
                 visible={passwordFormVisible}
                 onOk={this.onPasswordModalOk}
@@ -592,7 +592,7 @@ export class User extends React.PureComponent<IUserProps, IUserStates> {
                 />
               </Modal>
               <Modal
-                title="新增用户组"
+                title="Add user group"
                 wrapClassName="ant-modal-small"
                 visible={groupFormVisible}
                 footer={groupAddModalButtons}

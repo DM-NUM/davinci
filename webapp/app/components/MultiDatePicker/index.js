@@ -18,13 +18,13 @@ export class MultiDatePicker extends Component {
 
   componentWillMount () {
     $.fn.datepicker.dates['zh'] = {
-      days: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
-      daysShort: ['日', '一', '二', '三', '四', '五', '六'],
-      daysMin: ['日', '一', '二', '三', '四', '五', '六'],
-      months: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
-      monthsShort: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
-      today: '今天',
-      clear: '清除',
+      days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+      daysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+      daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      today: 'today',
+      clear: 'clear',
       format: this.props.format.toLowerCase(),
       titleFormat: 'yyyy MM', /* Leverages same syntax as 'format' */
       weekStart: 0
@@ -52,7 +52,7 @@ export class MultiDatePicker extends Component {
       <span className={styles.datepicker}>
         <input
           type="text"
-          placeholder={this.props.placeholder || '请选择日期（多选）'}
+          placeholder={this.props.placeholder || 'Pelease select a time（multiple）'}
           className="ant-input"
           value={this.state.value}
           ref="input"

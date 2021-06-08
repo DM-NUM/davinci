@@ -48,7 +48,7 @@ export class Setting extends React.PureComponent <ISettingProps> {
     const { form, deleteOrganization } = this.props
     const { id, name } = form.getFieldsValue()
     Modal.confirm({
-      title: `确定删除组织 “${name}”？`,
+      title: `Sure delete organization of “${name}”？`,
       onOk: () => {
         deleteOrganization(id)
       }
@@ -91,7 +91,7 @@ export class Setting extends React.PureComponent <ISettingProps> {
                   </FormItem>
                   <FormItem
                     {...commonFormItemStyle}
-                    label="名称"
+                    label="Name"
                   >
                     {getFieldDecorator('name', {
                       initialValue: '',
@@ -106,7 +106,7 @@ export class Setting extends React.PureComponent <ISettingProps> {
                 <Col>
                   <FormItem
                     {...commonFormItemStyle}
-                    label="描述"
+                    label="Description"
                   >
                     {getFieldDecorator('description', {
                     })(
@@ -118,14 +118,14 @@ export class Setting extends React.PureComponent <ISettingProps> {
               <Row className={styles.permissionZone}>
                 <Col>
                   <FormItem
-                    label="组织成员创建项目"
+                    label="Organization members create projects"
                   >
                     {getFieldDecorator('allowCreateProject', {
                       initialValue: true
                     })(
                       <Radio.Group size="small">
-                        <RadioButton value={false}>禁止</RadioButton>
-                        <RadioButton value={true}>允许</RadioButton>
+                        <RadioButton value={false}>Forbid</RadioButton>
+                        <RadioButton value={true}>Permit</RadioButton>
                       </Radio.Group>
                     )}
                   </FormItem>
@@ -163,14 +163,14 @@ export class Setting extends React.PureComponent <ISettingProps> {
                 <Col>
                   <FormItem
                  //   {...commonFormItemStyle}
-                    label="组织成员对项目的权限"
+                    label="Organization members' permission to the project"
                   >
                     {getFieldDecorator('memberPermission', {
                       initialValue: 1
                     })(
                       <Radio.Group size="small">
-                        <RadioButton value={0}>不可见任何</RadioButton>
-                        <RadioButton value={1}>只可见公开</RadioButton>
+                        <RadioButton value={0}>No visible</RadioButton>
+                        <RadioButton value={1}>Visible only</RadioButton>
                         {/* <RadioButton value={2}>修改</RadioButton>
                         <RadioButton value={3}>删除</RadioButton> */}
                       </Radio.Group>
@@ -182,18 +182,18 @@ export class Setting extends React.PureComponent <ISettingProps> {
                     onClick={this.props.editOrganization(this.props.form.getFieldsValue())}
                     disabled={isDisabled}
                   >
-                    保存修改
+                    Save Change
                   </Button>
                 </Col>
               </Row>
               <Row className={styles.dangerZone}>
                 <div className={styles.title}>
-                   删除组织
+                   Delete organization
                 </div>
                 <div className={styles.titleDesc}>
-                  <p className={styles.desc}>删除后无法恢复，请确定此次操作</p>
+                  <p className={styles.desc}>Cannot recover after deletion, please confirm this operation</p>
                   <p className={styles.button}>
-                    <Button type="danger" onClick={this.confirmDelete}>删除{name}</Button>
+                    <Button type="danger" onClick={this.confirmDelete}>Delete{name}</Button>
                   </p>
                 </div>
               </Row>

@@ -18,7 +18,7 @@ export class ResetPasswordForm extends React.PureComponent<IResetPasswordProps> 
   }
   private checkPasswordConfirm = (rule, value, callback) => {
     if (value && value !== this.props.form.getFieldValue('password')) {
-      callback('两次输入的密码不一致')
+      callback('Passwords entered twice are inconsistent')
     } else {
       callback()
     }
@@ -58,7 +58,7 @@ export class ResetPasswordForm extends React.PureComponent<IResetPasswordProps> 
             </FormItem>
 
             <FormItem
-              label="旧密码"
+              label="Old password"
               {...commonFormItemStyle}
               validateStatus={oldPassError ? 'error' : 'success'}
               help={oldPassError || ''}
@@ -66,7 +66,7 @@ export class ResetPasswordForm extends React.PureComponent<IResetPasswordProps> 
               {getFieldDecorator('oldPassword', {
                 rules: [{
                   required: true,
-                  message: '旧密码不能为空'
+                  message: 'Old password can not be empty'
                 }]
               })(
                 <Input type="password" placeholder="Your Password" />
@@ -75,7 +75,7 @@ export class ResetPasswordForm extends React.PureComponent<IResetPasswordProps> 
           </Col>
           <Col>
             <FormItem
-              label="新密码"
+              label="New password"
               {...commonFormItemStyle}
               validateStatus={newPassError ? 'error' : 'success'}
               help={newPassError || ''}
@@ -83,11 +83,11 @@ export class ResetPasswordForm extends React.PureComponent<IResetPasswordProps> 
               {getFieldDecorator('password', {
                 rules: [{
                   required: true,
-                  message: '新密码不能为空'
+                  message: 'New password can not be empty'
                 }, {
                   min: 6,
                   max: 20,
-                  message: '密码长度为6-20位'
+                  message: "Password's length is 6-20"
                 }, {
                   validator: this.forceCheckConfirm
                 }]
@@ -98,7 +98,7 @@ export class ResetPasswordForm extends React.PureComponent<IResetPasswordProps> 
           </Col>
           <Col>
             <FormItem
-              label="确认新密码"
+              label="Confirm new password"
               {...commonFormItemStyle}
               validateStatus={confirmPasswordError ? 'error' : 'success'}
               help={confirmPasswordError || ''}
@@ -106,7 +106,7 @@ export class ResetPasswordForm extends React.PureComponent<IResetPasswordProps> 
               {getFieldDecorator('confirmPassword', {
                 rules: [{
                   required: true,
-                  message: '请确认密码'
+                  message: 'Please confirm new password'
                 }, {
                   validator: this.checkPasswordConfirm
                 }]
@@ -116,7 +116,7 @@ export class ResetPasswordForm extends React.PureComponent<IResetPasswordProps> 
             </FormItem>
           </Col>
           <Col offset={4}>
-            <Button size="large" type="primary" disabled={isSubmit} onClick={this.props.submit}>确认修改</Button>
+            <Button size="large" type="primary" disabled={isSubmit} onClick={this.props.submit}>Confirm change</Button>
           </Col>
         </Row>
       </Form>

@@ -63,8 +63,8 @@ export function EditorHeader (props: IEditorHeaderProps) {
   } = props
 
   const placeholder = props.placeholder || {
-    name: '请输入名称',
-    description: '请输入描述…'
+    name: 'please enter a name',
+    description: 'please enter a description…'
   }
 
   return (
@@ -107,14 +107,14 @@ export function EditorHeader (props: IEditorHeaderProps) {
           )
           : (
             <div className={`${currentType === 'dashboard' ? utilStyles.hide : styles.actions}`}>
-              <Button onClick={onSetting}>设置</Button>
+              <Button onClick={onSetting}>setting</Button>
               <Button
                 type="primary"
                 loading={loading}
                 disabled={loading}
                 onClick={onSave}
               >
-                保存
+                save
               </Button>
             </div>
           )

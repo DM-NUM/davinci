@@ -79,11 +79,11 @@ export function errorHandler (error) {
   if (error.response) {
     switch (error.response.status) {
       case 403:
-        message.error('未登录或会话过期，请重新登录', 1)
+        message.error('Not logged in or session expired, please log in again', 1)
         removeToken()
         break
       case 401:
-        message.error('您没有权限访问此数据', 2)
+        message.error('You do not have permission to access this data', 2)
         break
       default:
         message.error(

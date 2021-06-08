@@ -32,8 +32,8 @@ export default function NoAuthorization () {
   return (
     <div className={styles.NoAuthorization}>
       <i className="iconfont icon-found" />
-      <h1>您没有权限访问当前页面</h1>
-      <Button size="large" style={{marginTop: '16px'}} onClick={() => history.go(-1)}>返回上一页</Button>
+      <h1>You don't have permission to access the current page</h1>
+      <Button size="large" style={{marginTop: '16px'}} onClick={() => history.go(-1)}>Go back to previous page</Button>
     </div>
   )
 }

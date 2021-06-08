@@ -291,7 +291,7 @@ export class WidgetList extends React.Component<IWidgetProps, IWidgetStates> {
     const AdminButton = ModulePermission<ButtonProps>(currentProject, 'widget', true)(Button)
 
     const columns = [{
-      title: '名称',
+      title: 'Name',
       dataIndex: 'name',
       key: 'name',
       filterDropdown: (
@@ -309,28 +309,28 @@ export class WidgetList extends React.Component<IWidgetProps, IWidgetStates> {
       sorter: (a, b) => a.name > b.name ? -1 : 1,
       sortOrder: tableSortedInfo.columnKey === 'name' ? tableSortedInfo.order : void 0
     }, {
-      title: '描述',
+      title: 'Description',
       dataIndex: 'description',
       key: 'description'
     }, {
-      title: '操作',
+      title: 'Action',
       key: 'action',
       width: 150,
       className: `${initializePermission(currentProject, 'widgetPermission') ? utilStyles.textAlignCenter : utilStyles.hide}`,
       render: (text, record) => (
         <span className="ant-table-action-column">
-          <Tooltip title="修改">
+          <Tooltip title="Change">
             <EditButton icon="edit" shape="circle" type="ghost" onClick={this.toWorkbench(record.id)} />
           </Tooltip>
-          <Tooltip title="复制">
+          <Tooltip title="Copy">
             <AdminButton icon="copy" shape="circle" onClick={this.onCopy('copy', record)} />
           </Tooltip>
           <Popconfirm
-            title="确定删除？"
+            title="Sure delete？"
             placement="bottom"
             onConfirm={onDeleteWidget(record.id)}
           >
-            <Tooltip title="删除">
+            <Tooltip title="Delete">
               <AdminButton icon="delete" shape="circle" />
             </Tooltip>
           </Popconfirm>
@@ -365,7 +365,7 @@ export class WidgetList extends React.Component<IWidgetProps, IWidgetStates> {
                 <Icon type="bars" />Widget List
               </Box.Title>
               <Box.Tools>
-                <Tooltip placement="bottom" title="新增">
+                <Tooltip placement="bottom" title="Add">
                   <AdminButton
                     type="primary"
                     icon="plus"
@@ -391,8 +391,8 @@ export class WidgetList extends React.Component<IWidgetProps, IWidgetStates> {
           </Box>
         </Container.Body>
         <Modal
-          title="复制 Widget"
-          okText="保存"
+          title="Copy Widget"
+          okText="Save"
           wrapClassName="ant-modal-small"
           visible={copyWidgetVisible}
           onCancel={this.hideForm}
@@ -404,7 +404,7 @@ export class WidgetList extends React.Component<IWidgetProps, IWidgetStates> {
               type="ghost"
               onClick={this.hideForm}
             >
-              取消
+              Cancel
             </Button>,
             <Button
               key="submit"
@@ -412,7 +412,7 @@ export class WidgetList extends React.Component<IWidgetProps, IWidgetStates> {
               type="primary"
               onClick={this.onModalOk}
             >
-              确认
+              Confirm
             </Button>
           ]}
         >

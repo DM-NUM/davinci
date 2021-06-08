@@ -66,11 +66,11 @@ export class GroupForm extends React.PureComponent<IGroupFormProps, {}> {
                 <Input />
               )}
             </FormItem>
-            <FormItem label="名称" {...commonFormItemStyle}>
+            <FormItem label="Name" {...commonFormItemStyle}>
               {getFieldDecorator('name', {
                 rules: [{
                   required: true,
-                  message: 'Name 不能为空'
+                  message: 'Name can not be empty'
                 }, {
                   validator: this.checkNameUnique
                 }]
@@ -80,7 +80,7 @@ export class GroupForm extends React.PureComponent<IGroupFormProps, {}> {
             </FormItem>
           </Col>
           <Col span={24}>
-            <FormItem label="描述" {...commonFormItemStyle}>
+            <FormItem label="Description" {...commonFormItemStyle}>
               {getFieldDecorator('desc', {
                 initialValue: ''
               })(

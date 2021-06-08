@@ -199,7 +199,7 @@ export class Group extends React.PureComponent<IGroupProps, IGroupStates> {
     } = this.props
 
     const columns: any = [{
-      title: '名称',
+      title: 'Name',
       dataIndex: 'name',
       key: 'name',
       filterDropdown: (
@@ -215,25 +215,25 @@ export class Group extends React.PureComponent<IGroupProps, IGroupStates> {
       sorter: (a, b) => a.name > b.name ? -1 : 1,
       sortOrder: tableSortedInfo.columnKey === 'name' && tableSortedInfo.order
     }, {
-      title: '描述',
+      title: 'Description',
       dataIndex: 'desc',
       key: 'desc'
     }, {
-      title: '操作',
+      title: 'Operate',
       key: 'action',
       width: 120,
       className: `${utilStyles.textAlignCenter}`,
       render: (text, record) => (
         <span className="ant-table-action-column">
-          <Tooltip title="修改">
+          <Tooltip title="Modify">
             <Button icon="edit" shape="circle" type="ghost" onClick={this.showDetail(record.id)} />
           </Tooltip>
           <Popconfirm
-            title="确定删除？"
+            title="Confirm Delete?"
             placement="bottom"
             onConfirm={onDeleteGroup(record.id)}
           >
-            <Tooltip title="删除">
+            <Tooltip title="Delete">
               <Button icon="delete" shape="circle" type="ghost" />
             </Tooltip>
           </Popconfirm>
@@ -254,7 +254,7 @@ export class Group extends React.PureComponent<IGroupProps, IGroupStates> {
         size="large"
         onClick={this.hideForm}
       >
-        取 消
+        Cancel
       </Button>
     ), (
       <Button
@@ -265,7 +265,7 @@ export class Group extends React.PureComponent<IGroupProps, IGroupStates> {
         disabled={formLoading}
         onClick={this.onModalOk}
       >
-        保 存
+        Save
       </Button>
     )])
 
@@ -290,7 +290,7 @@ export class Group extends React.PureComponent<IGroupProps, IGroupStates> {
                 <Icon type="bars" />Group List
               </Box.Title>
               <Box.Tools>
-                <Tooltip placement="bottom" title="新增">
+                <Tooltip placement="bottom" title="Add">
                   <Button type="primary" icon="plus" onClick={this.showAdd} />
                 </Tooltip>
               </Box.Tools>
@@ -309,7 +309,7 @@ export class Group extends React.PureComponent<IGroupProps, IGroupStates> {
                 </Col>
               </Row>
               <Modal
-                title={`${formType === 'add' ? '新增' : '修改'}用户组`}
+                title={`${formType === 'add' ? 'Add' : 'Modify'}User Group`}
                 wrapClassName="ant-modal-small"
                 visible={formVisible}
                 footer={modalButtons}

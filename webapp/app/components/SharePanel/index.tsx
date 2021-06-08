@@ -139,8 +139,8 @@ export class SharePanel extends React.PureComponent<ISharePanelProps, ISharePane
     const segmentControl = (
       <div className={styles.panelHead}>
         <RadioGroup defaultValue={active} onChange={this.radioChange}>
-          <RadioButton value="normal">普通分享</RadioButton>
-          <RadioButton value="secret">授权分享</RadioButton>
+          <RadioButton value="normal">Ordinary Share</RadioButton>
+          <RadioButton value="secret">Authorized Share</RadioButton>
         </RadioGroup>
       </div>
       )
@@ -159,7 +159,7 @@ export class SharePanel extends React.PureComponent<ISharePanelProps, ISharePane
       if (shareInfoLoading) {
         content = (<Icon type="loading" />)
       } else {
-        content = (<Button size="small" onClick={this.getShareInfo}>点击重新加载</Button>)
+        content = (<Button size="small" onClick={this.getShareInfo}>Click to Reload</Button>)
       }
     }
 
@@ -179,7 +179,7 @@ export class SharePanel extends React.PureComponent<ISharePanelProps, ISharePane
             <Col span={24}>
               <Input
                 className={styles.shareInput}
-                placeholder="请输入要分享的用户名"
+                placeholder="Please enter a user name to share"
                 onChange={this.authNameChange}
                 value={authName}
                 addonAfter={
@@ -187,7 +187,7 @@ export class SharePanel extends React.PureComponent<ISharePanelProps, ISharePane
                     style={{cursor: 'pointer'}}
                     onClick={this.creditShare}
                   >
-                    确定
+                    OK
                   </span>
                 }
               />

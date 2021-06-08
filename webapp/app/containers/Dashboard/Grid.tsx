@@ -18,7 +18,7 @@
  * >>
  */
 
-import * as React from 'react'
+import React from 'react'
 import { findDOMNode } from 'react-dom'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
@@ -643,7 +643,7 @@ export class Grid extends React.Component<IGridProps, IGridStates> {
       nativeQuery = cachedQueryConditions.nativeQuery
     }
 
-    let groups = cols.concat(rows).filter((g) => g.name !== '指标名称').map((g) => g.name)
+    let groups = cols.concat(rows).filter((g) => g.name !== 'Index Name').map((g) => g.name)
     let aggregators =  metrics.map((m) => ({
       column: decodeMetricName(m.name),
       func: m.agg
@@ -1210,7 +1210,7 @@ export class Grid extends React.Component<IGridProps, IGridStates> {
     let sql = void 0
     let name = void 0
     let filterSource = void 0
-    let widgetConfigGroups = cols.concat(rows).filter((g) => g.name !== '指标名称').map((g) => g.name)
+    let widgetConfigGroups = cols.concat(rows).filter((g) => g.name !== 'Index Name').map((g) => g.name)
     let aggregators =  metrics.map((m) => ({
       column: decodeMetricName(m.name),
       func: m.agg
@@ -1683,7 +1683,7 @@ export class Grid extends React.Component<IGridProps, IGridStates> {
         disabled={modalLoading}
         onClick={this.saveDashboardItem}
       >
-        保 存
+        Save
       </Button>
     )
 
@@ -1695,7 +1695,7 @@ export class Grid extends React.Component<IGridProps, IGridStates> {
             size="large"
             onClick={this.changeDashboardItemFormStep(0)}
           >
-            上一步
+            Previous Step
           </Button>
         ), saveDashboardItemButton]
         : [(
@@ -1706,7 +1706,7 @@ export class Grid extends React.Component<IGridProps, IGridStates> {
             disabled={selectedWidgets.length === 0}
             onClick={this.changeDashboardItemFormStep(1)}
           >
-            下一步
+            Next Step
           </Button>
         )]
       : saveDashboardItemButton
@@ -1766,7 +1766,7 @@ export class Grid extends React.Component<IGridProps, IGridStates> {
           )
         }
         <Modal
-          title={`${dashboardItemFormType === 'add' ? '新增' : '修改'} Widget`}
+          title={`${dashboardItemFormType === 'add' ? 'Add' : 'Modify'} Widget`}
           wrapClassName="ant-modal-large"
           visible={dashboardItemFormVisible}
           footer={modalButtons}

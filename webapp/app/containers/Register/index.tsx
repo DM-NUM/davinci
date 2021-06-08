@@ -97,15 +97,15 @@ export class Register extends React.PureComponent<IRegisterProps, IRegisterState
     const emailRep = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/
     if (username && password && email && password2) {
       if (!emailRep.test(email)) {
-        message.error('无效的邮箱地址')
+        message.error('Invalid email address')
         return
       }
       if (password.length < 6 || password.length > 20) {
-        message.error('密码长度为6-20位')
+        message.error('Password length is 6-20')
         return
       }
       if (password !== password2) {
-        message.error('两次输入的密码不一致')
+        message.error('Passwords entered twice are inconsistent')
         return
       }
       onSignup(username, email, password, () => {
@@ -162,11 +162,11 @@ export class Register extends React.PureComponent<IRegisterProps, IRegisterState
                 ? <Icon type="loading" />
                 : ''
             }
-            注册
+            Register
           </button>
           <p className={styles.tips}>
-            <span>已有davinci账号， </span>
-            <a href="javascript:;" onClick={this.toLogin}>点击登录</a>
+            <span>Already have a davinci account， </span>
+            <a href="javascript:;" onClick={this.toLogin}>Click to Login</a>
           </p>
         </div>
       )

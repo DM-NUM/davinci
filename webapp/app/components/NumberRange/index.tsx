@@ -87,7 +87,7 @@ export class NumberRange extends PureComponent<INumberRangeProps, INumberRangeSt
         <Input
           className={styles.number}
           value={value[0]}
-          placeholder={`${placeholder || ''}从`}
+          placeholder={`${placeholder || ''}from`}
           onChange={this.inputChange('from')}
           onPressEnter={this.inputSearch}
         />
@@ -95,7 +95,7 @@ export class NumberRange extends PureComponent<INumberRangeProps, INumberRangeSt
         <Input
           className={styles.number}
           value={value[1]}
-          placeholder="到"
+          placeholder="to"
           onChange={this.inputChange('to')}
           onPressEnter={this.inputSearch}
         />

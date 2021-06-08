@@ -245,7 +245,7 @@ export class Preview extends React.Component<IPreviewProps, IPreviewStates> {
       nativeQuery = cachedQueryConditions.nativeQuery
     }
 
-    let groups = cols.concat(rows).filter((g) => g.name !== '指标名称').map((g) => g.name)
+    let groups = cols.concat(rows).filter((g) => g.name !== 'Index Name').map((g) => g.name)
     let aggregators =  metrics.map((m) => ({
       column: decodeMetricName(m.name),
       func: m.agg

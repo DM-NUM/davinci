@@ -51,7 +51,7 @@ export class UserProfile extends React.PureComponent<IProfileProps, {}> {
           </Tooltip>)
         )
     }
-    const name = userProfile.name ? userProfile.name : '他'
+    const name = userProfile.name ? userProfile.name : 'He'
     const { getFieldDecorator } = this.props.form
     return (
       <Box>
@@ -60,7 +60,7 @@ export class UserProfile extends React.PureComponent<IProfileProps, {}> {
             <Breadcrumb className={utilStyles.breadcrumb}>
               <Breadcrumb.Item>
                 <Link to="/account/profile">
-                  <Icon type="bars" />{`${name}的信息`}
+                  <Icon type="bars" />{`${name}'s information`}
                 </Link>
               </Breadcrumb.Item>
             </Breadcrumb>
@@ -77,7 +77,7 @@ export class UserProfile extends React.PureComponent<IProfileProps, {}> {
                   <Col>
                     <FormItem
                       {...commonFormItemStyle}
-                      label="姓名"
+                      label="Name"
                     >
                       {getFieldDecorator('name', {})(
                         <Input disabled/>
@@ -87,7 +87,7 @@ export class UserProfile extends React.PureComponent<IProfileProps, {}> {
                   <Col>
                     <FormItem
                       {...commonFormItemStyle}
-                      label="描述"
+                      label="D"
                     >
                       {getFieldDecorator('description', {})(
                         <Input disabled/>
@@ -97,7 +97,7 @@ export class UserProfile extends React.PureComponent<IProfileProps, {}> {
                   <Col>
                     <FormItem
                       {...commonFormItemStyle}
-                      label="部门"
+                      label="Department"
                     >
                       {getFieldDecorator('department', {})(
                         <Input disabled/>
@@ -107,7 +107,7 @@ export class UserProfile extends React.PureComponent<IProfileProps, {}> {
                   <Col>
                     <FormItem
                       {...commonFormItemStyle}
-                      label="组织"
+                      label="Organizations"
                     >
                       {getFieldDecorator('org', {})(
                         <div className={styles.orgIcon}>{organizations}</div>

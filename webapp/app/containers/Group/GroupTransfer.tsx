@@ -39,7 +39,7 @@ export function GroupTransfer (props: IGroupTransferProps) {
     <Row>
       <Col span={24}>
         <Transfer
-          titles={['列表', '已选']}
+          titles={['List', 'Selected']}
           listStyle={{width: '220px'}}
           dataSource={props.source}
           rowKey={getRowKey}

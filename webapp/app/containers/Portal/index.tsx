@@ -207,7 +207,7 @@ export class Portal extends React.Component<IPortalProps, IPortalStates> {
           [styles.editing]: !d.publish
         })
 
-        const editHint = !d.publish && '(编辑中…)'
+        const editHint = !d.publish && '(Editing…)'
 
         const startCol = (currentPage - 1) * pageSize + 1
         const endCol = Math.min(currentPage * pageSize, portalsArr.length)
@@ -238,15 +238,15 @@ export class Portal extends React.Component<IPortalProps, IPortalStates> {
                     {d.description}
                   </p>
                 </header>
-                <Tooltip title="编辑">
+                <Tooltip title="Edit">
                   <Icon className={styles.edit} type="setting" onClick={this.showPortalForm('edit', d)} />
                 </Tooltip>
                   <Popconfirm
-                    title="确定删除？"
+                    title="Sure delete？"
                     placement="bottom"
                     onConfirm={this.deletePortal(d)}
                   >
-                    <Tooltip title="删除">
+                    <Tooltip title="Delete">
                       <Icon className={styles.delete} type="delete" onClick={this.stopPPG} />
                     </Tooltip>
                   </Popconfirm>
@@ -279,7 +279,7 @@ export class Portal extends React.Component<IPortalProps, IPortalStates> {
         size="large"
         onClick={this.hidePortalForm}
       >
-        取 消
+        Cancel
       </Button>
     ), (
       <Button
@@ -290,7 +290,7 @@ export class Portal extends React.Component<IPortalProps, IPortalStates> {
         disabled={modalLoading}
         onClick={this.onModalOk}
       >
-        保 存
+        Save
       </Button>
     )]
 
@@ -316,12 +316,12 @@ export class Portal extends React.Component<IPortalProps, IPortalStates> {
                   <Search
                     size="large"
                     className={`${utilStyles.searchInput} ${styles.searchInputAdmin}`}
-                    placeholder="Dashboard Portal 名称"
+                    placeholder="Dashboard Portal Name"
                     onSearch={this.onSearchPortal}
                   />
                 </Col>
                 <Col md={2} sm={24} className={styles.addCol}>
-                  <Tooltip placement="bottom" title="新增">
+                  <Tooltip placement="bottom" title="Add">
                     <Button
                       size="large"
                       type="primary"
@@ -343,7 +343,7 @@ export class Portal extends React.Component<IPortalProps, IPortalStates> {
           </Row>
         </Container.Body>
         <Modal
-          title={`${formType === 'add' ? '新增' : '修改'} Portal`}
+          title={`${formType === 'add' ? 'Add' : 'Modify'} Portal`}
           wrapClassName="ant-modal-small"
           visible={formVisible}
           footer={modalButtons}

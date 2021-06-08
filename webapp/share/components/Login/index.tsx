@@ -77,7 +77,7 @@ class Login extends React.PureComponent<ILoginProps, ILoginStates> {
                 ? <Icon type="loading" />
                 : ''
             }
-            登 录
+            Login
           </button>
         </div>
       </div>

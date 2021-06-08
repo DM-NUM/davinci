@@ -133,7 +133,7 @@ export class PaginationWithoutTotal extends PureComponent<IPaginationWithoutTota
           disabled={current === 1}
           onClick={this.change('prev')}
         >
-          <Icon type="left" />上一页
+          <Icon type="left" />Previous Page
         </Button>
         <Button
           loading={loading}
@@ -141,7 +141,7 @@ export class PaginationWithoutTotal extends PureComponent<IPaginationWithoutTota
           disabled={dataLength < pageSize}
           onClick={this.change('next')}
         >
-          下一页<Icon type="right" />
+          Next Page<Icon type="right" />
         </Button>
         {showSizeChanger && (
           <Select
@@ -159,14 +159,14 @@ export class PaginationWithoutTotal extends PureComponent<IPaginationWithoutTota
         )}
         {showQuickJumper && (
           <div className={styles.quickJumper}>
-            跳至
+            Goto
             <Input
               value={jumpTo}
               size={size}
               onChange={this.changeJumpToValue}
               onPressEnter={this.change('jump')}
             />
-            页
+            Page
           </div>
         )}
       </div>

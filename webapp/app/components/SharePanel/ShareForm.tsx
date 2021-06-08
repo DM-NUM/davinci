@@ -48,7 +48,7 @@ export class ShareForm extends React.PureComponent<IShareFormProps, {}> {
       <div>
         <Row className={styles.shareRow}>
           <Col span={5}>
-            <span className={styles.shareText}>链接：</span>
+            <span className={styles.shareText}>URL：</span>
           </Col>
           <Col span={19}>
             <Input
@@ -59,7 +59,7 @@ export class ShareForm extends React.PureComponent<IShareFormProps, {}> {
                   style={{cursor: 'pointer'}}
                   onClick={this.handleInputSelect}
                 >
-                  复制
+                  Copy
                 </span>
               }
               ref={this.shareLinkInput}

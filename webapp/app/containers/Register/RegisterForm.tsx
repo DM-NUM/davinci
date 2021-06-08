@@ -76,7 +76,7 @@ export class RegisterForm extends React.PureComponent<IRegisterFormProps, {}> {
         <div className={styles.input}>
           <Icon type="user" />
           <input
-            placeholder="用户名"
+            placeholder="User Name"
             value={username}
             onFocus={this.bindDocumentKeypress}
             onBlur={this.unbindDocumentKeypress}
@@ -86,7 +86,7 @@ export class RegisterForm extends React.PureComponent<IRegisterFormProps, {}> {
         <div className={styles.input}>
           <Icon type="mail" />
           <input
-            placeholder="邮箱"
+            placeholder="E-mail"
             value={email}
             onFocus={this.bindDocumentKeypress}
             onBlur={this.unbindDocumentKeypress}
@@ -96,7 +96,7 @@ export class RegisterForm extends React.PureComponent<IRegisterFormProps, {}> {
         <div className={styles.input}>
           <Icon type="unlock" />
           <input
-            placeholder="密码"
+            placeholder="Password"
             type="password"
             value={password}
             onFocus={this.bindDocumentKeypress}
@@ -107,7 +107,7 @@ export class RegisterForm extends React.PureComponent<IRegisterFormProps, {}> {
         <div className={styles.input}>
           <Icon type="unlock" />
           <input
-            placeholder="确认密码"
+            placeholder="Confirm password"
             type="password"
             value={password2}
             onFocus={this.bindDocumentKeypress}
